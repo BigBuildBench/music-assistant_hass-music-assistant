@@ -1,0 +1,134 @@
+name: Report a Bug in Music Assistant
+description: Report an issue with Music Assistant.
+labels: ["triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue form is for reporting bugs only! Read this for what you MUST include [Troubleshooting][ft]
+        For questions read our [FAQ section][fq] or visit our community on [Discord][cf].
+        If you have a feature or enhancement request, please enter them in our discussions section [feature request][fr]
+
+        [fq]: https://github.com/music-assistant/hass-music-assistant/discussions/categories/q-a-faq
+        [cf]: https://discord.com/channels/753947050995089438/753947050995089442
+        [fr]: https://github.com/music-assistant/hass-music-assistant/discussions/categories/feature-requests-and-ideas
+        [ft]: https://music-assistant.io/faq/troubleshooting/
+
+  - type: input
+    id: version_MA
+    validations:
+      required: true
+    attributes:
+      label: What version of Music Assistant has the issue?
+      placeholder: 2.0.0
+      description: >
+        Can be found in: MA SETTINIGS>>CORE
+        For example: 2.0.0b100
+  - type: input
+    id: version_integration
+    validations:
+      required: false
+    attributes:
+      label: What version of the Home Assistant Integration have you got installed?
+      placeholder: 2024.x.y
+      description: >
+        Can be found in: HACS>>INTEGRATIONS>>MUSIC ASSISTANT
+        For example: 2024.5.1
+  - type: checkboxes
+    validations:
+      required: true
+    attributes:
+      label: Have you tried everything in the Troubleshooting FAQ and reviewed the Open and Closed Issues and Discussions to resolve this yourself?
+      description: |
+        Explain below what you have tried and what did not help from the [troubleshooting](https://music-assistant.io/faq/troubleshooting/) steps
+      options:
+        - label: "Yes"
+          required: true
+  - type: textarea
+    validations:
+      required: true
+    attributes:
+      label: The problem
+      description: |
+        Please give a clear and concise description of the issue you are experiencing here,
+        to communicate to the maintainers. Tell us what you were trying to do and what happened.
+  - type: textarea
+    validations:
+      required: true
+    attributes:
+      label: How to reproduce
+      description: |
+        Describe the least amount of steps possible to reproduce your error
+  - type: textarea
+    validations:
+      required: true
+    attributes:
+      label: Music Providers
+      description: |
+        List the music providers that you have tried which result in the problem. ALSO list the music providers you have tried that don't show the problem
+  - type: textarea
+    validations:
+      required: true
+    attributes:
+      label: Player Providers
+      description: |
+        List the player providers that you have tried which result in the problem. ALSO list the player providers you have tried that don't show the problem. Also indicate if you are trying to play to grouped players.
+  - type: textarea
+    id: logs
+    attributes:
+      label: Full log output
+      placeholder: DO NOT PASTE the log here. ATTACH IT.
+      description: |
+        Please DOWNLOAD then DRAG and DROP the full log output from MA SETTINGS>>CORE into the field below. Please do NOT use debug logging unless asked to do so.
+  - type: textarea
+    attributes:
+      label: Additional information
+      description: |
+        Supply additional information requested which is not captured above. Include how the playback is being instigated if that makes a difference (ie. via the UI or via HA service call), what you have tried from the troubleshooting FAQ and detail what is working so it is clear you have narrowed down the problem. Additionally, if you aren't running HAOS or have an unusual network setup provide details about that.
+  - type: markdown
+    attributes:
+      value: |
+        ## Environment
+  - type: input
+    id: version_HA
+    validations:
+      required: true
+    attributes:
+      label: What version of Home Assistant Core are your running
+      placeholder: 2024.2.0
+      description: |
+        Can be found in: [Settings -> About](https://my.home-assistant.io/redirect/info/).
+        For example: 2024.2.0
+        [![Open your Home Assistant instance and show your Home Assistant version information.](https://my.home-assistant.io/badges/info.svg)](https://my.home-assistant.io/redirect/info/)
+  - type: dropdown
+    validations:
+      required: true
+    attributes:
+      label: What type of installation are you running?
+      description: |
+        Can be found in: [Settings -> About](https://my.home-assistant.io/redirect/info/).
+
+        [![Open your Home Assistant instance and show your Home Assistant version information.](https://my.home-assistant.io/badges/info.svg)](https://my.home-assistant.io/redirect/info/)
+      options:
+        - Home Assistant OS
+        - Home Assistant Container
+        - Home Assistant Supervised
+        - Home Assistant Core
+  - type: dropdown
+    validations:
+      required: true
+    attributes:
+      label: On what type of hardware are you running?
+      description: |
+        Can be found in: [Settings -> System -> Hardware](https://my.home-assistant.io/redirect/hardware/).
+
+        [![Open your Home Assistant instance and show your hardware information.](https://my.home-assistant.io/badges/hardware.svg)](https://my.home-assistant.io/redirect/hardware/)
+      options:
+        - Raspberry Pi
+        - ODROID
+        - ASUS Tinkerboard
+        - Generic x86-64 (e.g. Intel NUC)
+        - Windows
+        - macOS
+        - Linux
+        - Alternative

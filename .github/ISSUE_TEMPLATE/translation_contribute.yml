@@ -1,0 +1,31 @@
+name: "Translation Request Music Assistant."
+description: "Contribute to Music Assistant with a translation."
+labels: ["triage", "translation"]
+assignees:
+  - jozefKruszynski
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue form is for contributions to translations only!
+        More information on the process can be found in the discussions [see here][lc]
+
+        [lc]: https://github.com/orgs/music-assistant/discussions/1216
+
+  - type: input
+    id: new_language
+    validations:
+      required: true
+    attributes:
+      label: New language
+      placeholder: klingon
+      description: >
+        New language to contribute with
+  - type: textarea
+    id: additional_remarks
+    validations:
+      required: false
+    attributes:
+      label: Additional remarks
+      description: |
+        Optional
